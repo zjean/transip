@@ -1,13 +1,13 @@
-package digitalocean
+package transip
 
 import (
 	"github.com/caddyserver/caddy/v2"
 	"github.com/caddyserver/caddy/v2/caddyconfig/caddyfile"
-	"github.com/libdns/digitalocean"
+	"github.com/libdns/transip"
 )
 
 // Provider wraps the provider implementation as a Caddy module.
-type Provider struct{ *digitalocean.Provider }
+type Provider struct{ *transip.Provider }
 
 func init() {
 	caddy.RegisterModule(Provider{})
@@ -16,8 +16,8 @@ func init() {
 // CaddyModule returns the Caddy module information.
 func (Provider) CaddyModule() caddy.ModuleInfo {
 	return caddy.ModuleInfo{
-		ID:  "dns.providers.digitalocean",
-		New: func() caddy.Module { return &Provider{new(digitalocean.Provider)} },
+		ID:  "dns.providers.transip",
+		New: func() caddy.Module { return &Provider{new(transip.Provider)} },
 	}
 }
 
@@ -31,25 +31,29 @@ func (p *Provider) Provision(ctx caddy.Context) error {
 
 // UnmarshalCaddyfile sets up the DNS provider from Caddyfile tokens. Syntax:
 //
-// digitalocean [<api_token>] {
-//     api_token <api_token>
+// transip [<username>, <privatekey_path>] {
+//     username <username>
+//     privatekey_path <privatekey_path>
 // }
 //
 func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 	for d.Next() {
 		if d.NextArg() {
-			p.Provider.APIToken = d.Val()
+			p.Provider.AccountName = d.Val()
+		}
+		if d.NextArg() {
+			p.Provider.PrivateKeyPath = d.Val()
 		}
 		if d.NextArg() {
 			return d.ArgErr()
 		}
 		for nesting := d.Nesting(); d.NextBlock(nesting); {
 			switch d.Val() {
-			case "api_token":
-				if p.Provider.APIToken != "" {
+			case "username":
+				if p.Provider.AccountName != "" {
 					return d.Err("API token already set")
 				}
-				p.Provider.APIToken = d.Val()
+				p.Provider.AccountName = d.Val()
 				if d.NextArg() {
 					return d.ArgErr()
 				}
@@ -58,8 +62,11 @@ func (p *Provider) UnmarshalCaddyfile(d *caddyfile.Dispenser) error {
 			}
 		}
 	}
-	if p.Provider.APIToken == "" {
-		return d.Err("missing API token")
+	if p.Provider.AccountName == "" {
+		return d.Err("missing AccountName")
+	}
+	if p.Provider.PrivateKeyPath == "" {
+		return d.Err("missing PrivateKeyPath")
 	}
 	return nil
 }
