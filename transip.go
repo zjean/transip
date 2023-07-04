@@ -24,8 +24,8 @@ func (Provider) CaddyModule() caddy.ModuleInfo {
 // Before using the provider config, resolve placeholders in the API token.
 // Implements caddy.Provisioner.
 func (p *Provider) Provision(ctx caddy.Context) error {
-	repl := caddy.NewReplacer()
-	p.Provider.APIToken = repl.ReplaceAll(p.Provider.APIToken, "")
+	//repl := caddy.NewReplacer()
+	//p.Provider.APIToken = repl.ReplaceAll(p.Provider.APIToken, "")
 	return nil
 }
 
