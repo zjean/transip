@@ -1,6 +1,6 @@
 module github.com/zjean/transip
 
-go 1.14
+go 1.16
 
 require (
 	github.com/caddyserver/caddy/v2 v2.6.4
