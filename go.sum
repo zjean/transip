@@ -386,6 +386,8 @@ github.com/libdns/libdns v0.0.0-20200501023120-186724ffc821 h1:663opx/RKxiISi1oz
 github.com/libdns/libdns v0.0.0-20200501023120-186724ffc821/go.mod h1:yQCXzk1lEZmmCPa857bnk4TsOiqYasqpyOEeSObbb40=
 github.com/libdns/libdns v0.1.0 h1:0ctCOrVJsVzj53mop1angHp/pE3hmAhP7KiHvR0HD04=
 github.com/libdns/libdns v0.1.0/go.mod h1:yQCXzk1lEZmmCPa857bnk4TsOiqYasqpyOEeSObbb40=
+github.com/libdns/transip v0.0.0-20200914183413-fcc048c98fe7 h1:XGE61n8oQFWkcKC6KWDenA89k6NACLUt5qI1ooHVv3k=
+github.com/libdns/transip v0.0.0-20200914183413-fcc048c98fe7/go.mod h1:tbEAd4KKqq2ttdHz9DiCRiWjNKkixz8bCIubp1SNDm0=
 github.com/lightstep/lightstep-tracer-common/golang/gogo v0.0.0-20190605223551-bc2310a04743/go.mod h1:qklhhLq1aX+mtWk9cPHPzaBjWImj5ULL6C7HFJtXQMM=
 github.com/lightstep/lightstep-tracer-go v0.18.1/go.mod h1:jlF1pusYV4pidLvZ+XD0UBX0ZE6WURAspgAczcDHrL4=
 github.com/logrusorgru/aurora v0.0.0-20181002194514-a7b3b318ed4e/go.mod h1:7rIyQOR62GCctdiQpZ/zOJlFyk6y+94wXzv6RNZgaR4=
@@ -659,6 +661,9 @@ github.com/tmc/grpc-websocket-proxy v0.0.0-20170815181823-89b8d40f7ca8/go.mod h1
 github.com/tmc/grpc-websocket-proxy v0.0.0-20190109142713-0ad062ec5ee5/go.mod h1:ncp9v5uamzpCO7NfCPTXjqaC+bZgJeR0sMTm6dMHP7U=
 github.com/tomasen/realip v0.0.0-20180522021738-f0c99a92ddce/go.mod h1:o8v6yHRoik09Xen7gje4m9ERNah1d1PPsVq1VEx9vE4=
 github.com/tommy-muehle/go-mnd v1.1.1/go.mod h1:dSUh0FtTP8VhvkL1S+gUR1OKd9ZnSaozuI6r3m6wOig=
+github.com/transip/gotransip v5.8.2+incompatible h1:aNJhw/w/3QBqFcHAIPz1ytoK5FexeMzbUCGrrhWr3H0=
+github.com/transip/gotransip v5.8.2+incompatible/go.mod h1:uacMoJVmrfOcscM4Bi5NVg708b7c6rz2oDTWqa7i2Ic=
+github.com/transip/gotransip/v6 v6.1.0/go.mod h1:pQZ36hWWRahCUXkFWlx9Hs711gLd8J4qdgLdRzmtY+g=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
 github.com/ugorji/go/codec v0.0.0-20181204163529-d75b2dcb6bc8/go.mod h1:VFNgLljTbGfSG7qAOspJ7OScBnGdDN/yBr0sguwnwf0=
 github.com/ultraware/funlen v0.0.1/go.mod h1:Dp4UiAus7Wdb9KUZsYWZEWiRzGuM2kXM1lPbfaF6xhA=
